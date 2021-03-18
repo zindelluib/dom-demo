@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Find By Class Name</title>
+</head>
+<body>
+	<h1>Find By Class Name</h1>
+	<p class="messages">Hello</p>
+	<p class="messages">I love you!</p>
+	<p class="messages">How are you?</p>
+	<p class="messages">Sweet Dreams :)</p>
+
+	<!-- <button onclick="colorMsg()" id="colorBtn">Color Messages</button>
+	<button onclick="resetColor()" id="resetBtn">Reset Color</button> -->
+
+	<button  id="colorBtn">Color Messages</button>
+	<button id="resetBtn">Reset Color</button>
+	<script>
+		var messages  = document.getElementsByClassName('messages');
+		// document.getElementById('colorBtn').onclick  = colorMsg;
+		// document.getElementById('resetBtn').onclick = resetColor;
+
+		document.getElementById('colorBtn').addEventListener('click',() => {
+			for(var i=0;i<messages.length;i++){
+				var line  = i+1;
+				if(line % 2 == 0){
+					messages[i].style.color =  'red'
+				}else{
+					messages[i].style.color  = 'blue';
+				}
+			}
+
+		});
+		document.getElementById('resetBtn').addEventListener('click',() =>{
+			for(var i=0;i<messages.length;i++){
+				messages[i].style.color = 'initial';
+			}
+		});
+
+		/*function resetColor(){
+			for(var i=0;i<messages.length;i++){
+				messages[i].style.color = 'initial';
+			}
+		}*/
+		/*function colorMsg(){
+			for(var i=0;i<messages.length;i++){
+				var line  = i+1;
+				if(line % 2 == 0){
+					messages[i].style.color =  'red'
+				}else{
+					messages[i].style.color  = 'blue';
+				}
+			}
+		}*/
+
+	</script>
+</body>
+</html>

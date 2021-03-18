@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Attribute Demo</title>
+
+</head>
+<body>
+	<h1>Changing Attributes</h1>
+	<img height="250" width="300" id="emo"><br>
+	<button onclick="showSad()" id="sadBtn">Show Sad Face</button>
+	<button onclick="showHappy()" id="happyBtn">Show Happy Face</button>
+	<script>
+		var emo  = document.getElementById('emo');
+		var happyBtn = document.getElementById('happyBtn');
+		var sadBtn  = document.getElementById('sadBtn');
+		function showSad(){
+			emo.src = 'images/sad.png';
+			happyBtn.style.display = 'initial';
+			sadBtn.style.display  = 'none';
+		}
+
+		function showHappy(){
+			happyBtn.style.display   = 'none';
+			sadBtn.style.display  = 'initial';
+			emo.src  = 'images/smiley.jpg';
+		}
+
+		showHappy();
+	</script>
+</body>
+</html>
